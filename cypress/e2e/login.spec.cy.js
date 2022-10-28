@@ -2,9 +2,19 @@
 
 context('Revis Cypress login', () => {
 
+    beforeEach(() => {
+        cy.visit ('http://lojaebac.ebaconline.art.br/minha-conta/')
+        
+    });
+
+    afterEach(() => {
+        cy.screenshot ()
+        
+    });
+
     it('Deve fazer o login com sucesso', () => {
 
-        cy.visit ('http://lojaebac.ebaconline.art.br/minha-conta/')
+        
         cy.get('#username').type ('aluno_ebac@teste.com')
         cy.get('#password').type ('teste@teste.com')
         cy.get('.woocommerce-form > .button').click ()
@@ -18,7 +28,7 @@ context('Revis Cypress login', () => {
 
     it ('Deve exibir uma mensagem de erro ao digitar senha errada', () => {
 
-        cy.visit ('http://lojaebac.ebaconline.art.br/minha-conta/')
+       
         cy.get('#username').type ('aluno_ebac@teste.com')
         cy.get('#password').type ('error@texte')
         cy.get('.woocommerce-form > .button').click ()
@@ -30,7 +40,7 @@ context('Revis Cypress login', () => {
     it('Deve exibir uma mensagem de erro ao digital e-mail errado', () => {
 
         
-        cy.visit ('http://lojaebac.ebaconline.art.br/minha-conta/')
+       
         cy.get('#username').type ('error_ebac@teste.com')
         cy.get('#password').type ('teste@teste.com')
         cy.get('.woocommerce-form > .button').click ()

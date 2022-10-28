@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/EduardoMaltas/Revis-o-Cypress-1#readme",
   "devDependencies": {
-    "cypress": "^10.10.0"
+    "cypress": "^10.11.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "i": "^0.3.7",
+    "npm": "^8.19.2"
   }
 }
